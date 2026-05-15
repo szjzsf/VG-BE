@@ -1,0 +1,18 @@
+Telepítés:
+npm i
+bootstrap, bootstrap-icons, react-router-dom, (axios)
+
+W3 - 
+REACT ROUTER (w3schools.com/react/react_router.asp) —> Router
+REACT CUSTOM HOOKS (w3schools.com/react_customhooks.asp) —> GetAll
+REACT SUBMIT FORMS (w3schools.com/react/react_forms_submit.asp) —> Post
+
+
+Import - visszatörlés, beírás, enter
+
+Bootstrap - getbootstrap.com
+
+
+
+GitHub:
+https://github.com/LTamas02/VG-FE
