@@ -1,0 +1,25 @@
+[HttpGet("ById/{id}")]
+public IActionResult ById(int id)
+{
+    try
+    {
+        using (var cx = new dbContext())
+        {
+            var response = cx.Hajos.FirstOrDefault(h => h.Id == id);
+
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode(404, $"Nincs ilyen id-jű hajó: {id}");
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        //return BadRequest(ex.Message);
+        return StatusCode(400, ex.Message);
+    }
+}

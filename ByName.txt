@@ -1,0 +1,25 @@
+[HttpGet("ByName/{nev}")]
+public IActionResult ByName(string nev)
+{
+    try
+    {
+        using (var cx = new dbContext())
+        {
+            var response = cx.Hajos.FirstOrDefault(h => h.Nev == nev);
+            
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return StatusCode(404, $"Nincs ilyen nevű hajó: {nev}");
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        //return BadRequest(ex.Message);
+        return StatusCode(400, ex.Message);
+    }
+}

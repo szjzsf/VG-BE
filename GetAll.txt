@@ -1,0 +1,16 @@
+[HttpGet]
+public IActionResult GetAllItems()
+{
+    try
+    {
+        using (var cx = new dbContext())
+        {
+            var response = cx.Items.ToList();
+            return Ok(response);
+        }
+    }
+    catch(Exception ex)
+    {
+        return BadRequest(ex.Message);
+    }
+}

@@ -1,0 +1,25 @@
+[HttpGet]
+public IActionResult All()
+{
+    try
+    {
+        using(var cx = new CsatahajokContext())
+        {
+            var hajok = cx.Hajos.Select(hajo => new Hajo
+            {
+                Nev = hajo.Nev,
+                Osztaly = hajo.Osztaly,
+                Felavatva = hajo.Felavatva,
+                AgyukSzama = hajo.AgyukSzama,
+                Kaliber = hajo.Kaliber,
+                Vizkiszoritas = hajo.Vizkiszoritas,
+            }).ToList();
+
+            return Ok(hajok);
+        }
+    }
+    catch (Exception ex)
+    {
+        return StatusCode(400, $"Hiba a művelet végrehajtása közben! \n {ex.Message}");
+    }
+}
