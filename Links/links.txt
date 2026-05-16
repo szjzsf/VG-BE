@@ -11,7 +11,7 @@ REACT SUBMIT FORMS (w3schools.com/react/react_forms_submit.asp) —> Post
 Import - visszatörlés, beírás, enter
 
 Bootstrap - getbootstrap.com
-
+Bootstrap Icons - icons.getbootstrap.com
 
 
 GitHub:
