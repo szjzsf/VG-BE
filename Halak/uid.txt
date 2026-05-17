@@ -1,0 +1,2 @@
+//Main elé (Program.cs)
+public static string UID { get; internal set; }
